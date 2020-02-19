@@ -44,14 +44,14 @@ export default {
     dateAxis.renderer.minGridDistance = 50;
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    chart.scrollbarY = new am4core.Scrollbar();
-    chart.scrollbarY.parent = chart.leftAxesContainer;
-    chart.scrollbarY.toBack();
+    // chart.scrollbarY = new am4core.Scrollbar();
+    // chart.scrollbarY.parent = chart.leftAxesContainer;
+    // chart.scrollbarY.toBack();
 
     // Create a horizontal scrollbar with previe and place it underneath the date axis
-    chart.scrollbarX = new am4charts.XYChartScrollbar();
+    // chart.scrollbarX = new am4charts.XYChartScrollbar();
 
-    chart.scrollbarX.parent = chart.bottomAxesContainer;
+    // chart.scrollbarX.parent = chart.bottomAxesContainer;
 
     dateAxis.start = 0;
     dateAxis.keepSelection = true;
@@ -91,7 +91,7 @@ export default {
       // valueAxis.renderer.line.stroke = series.stroke;
       // valueAxis.renderer.labels.template.fill = series.stroke;
       valueAxis.renderer.opposite = opposite;
-      chart.scrollbarX.series.push(series);
+      //   chart.scrollbarX.series.push(series);
     }
     createAxisAndSeries("suspect", "疑似", true);
 
@@ -130,6 +130,6 @@ export default {
 <style scoped>
 .hello {
   width: 95%;
-  height: 500px;
+  height: 600px;
 }
 </style>

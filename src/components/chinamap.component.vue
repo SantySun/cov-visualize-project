@@ -106,7 +106,7 @@ export default {
     });
 
     // Set projection
-    chart.projection = new am4maps.projections.Mercator();
+    // chart.projection = new am4maps.projections.Mercator();
     // Create map polygon series
     let polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
 
