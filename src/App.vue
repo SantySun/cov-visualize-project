@@ -1,19 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <chinaTotal msg="Welcome to Your Vue.js App" />
+    <chinaDayList msg="Welcome to Your Vue.js App" />
+    <chinaDayAddList msg="Welcome to Your Vue.js App" />
+
+    <provinceMap msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import HelloWorld from "./components/HelloWorld.vue";
+import chinaTotal from "./components/chinatotal.component.vue";
+import chinaDayList from "./components/chinadaylist.component.vue";
+import chinaDayAddList from "./components/chinaadd.component.vue";
+import provinceMap from "./components/chinamap.component.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    chinaTotal,
+    chinaDayList,
+    chinaDayAddList,
+    provinceMap
   }
-}
+};
 </script>
 
 <style>
