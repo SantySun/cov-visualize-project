@@ -33,11 +33,12 @@ export default {
     chart.dateFormatter.inputDateFormat = "MM.dd";
 
     chart.colors.list = [
-      am4core.color("#FFD952"),
+      am4core.color("#22DDA2"),
       am4core.color("#000000"),
       am4core.color("#228C22"),
       am4core.color("#FF9671"),
-      am4core.color("#FF5B57")
+      am4core.color("#FF5B57"),
+      am4core.color("#FFDB87")
     ];
 
     let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -98,7 +99,9 @@ export default {
     createAxisAndSeries("confirm", "累计确诊", true);
     createAxisAndSeries("dead", "死亡", true);
     createAxisAndSeries("heal", "治愈", false);
+    createAxisAndSeries("nowConfirm", "现有确诊", false);
     createAxisAndSeries("nowSevere", "危重", false);
+    createAxisAndSeries("suspect", "疑似", false);
 
     chart.colors.step = 2;
 
@@ -130,7 +133,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
-  width: 100%;
+  width: 95%;
   height: 500px;
 }
 </style>

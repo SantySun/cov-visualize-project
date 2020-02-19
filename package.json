@@ -37,5 +37,18 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantySun/cov-visualize-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SantySun/cov-visualize-project/issues"
+  },
+  "homepage": "https://github.com/SantySun/cov-visualize-project#readme"
 }

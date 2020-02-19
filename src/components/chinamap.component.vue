@@ -146,8 +146,8 @@ export default {
 
     // Configure series tooltip
     let polygonTemplate = polygonSeries.mapPolygons.template;
-    polygonTemplate.tooltipText = `{pname}
-                                    总确诊 ：{value}
+    polygonTemplate.tooltipText = `[bold]{pname}:[/]
+                                    总确诊: {value}
                                     已治愈: {heal}
                                     已死亡: {dead}`;
     polygonTemplate.nonScalingStroke = true;
@@ -227,7 +227,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
-  width: 100%;
+  width: 95%;
   height: 500px;
 }
 </style>

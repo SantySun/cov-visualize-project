@@ -5,6 +5,7 @@
     <chinaDayAddList msg="Welcome to Your Vue.js App" />
 
     <provinceMap msg="Welcome to Your Vue.js App" />
+    <div>数据来源：腾讯</div>
   </div>
 </template>
 
