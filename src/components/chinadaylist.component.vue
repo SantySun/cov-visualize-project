@@ -45,8 +45,33 @@ export default {
 
     let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
     dateAxis.renderer.minGridDistance = 50;
+    dateAxis.adapter.add("getTooltipText", text => {
+      let month = text.split(" ")[0];
+      let date = text.split(" ")[1];
+      // if (month.match("0.")) month = month[1];
+      const months = {
+        Jan: 1,
+        Feb: 2,
+        Mar: 3,
+        Apr: 4,
+        May: 5,
+        Jun: 6,
+        Jul: 7,
+        Aug: 8,
+        Sep: 9,
+        Oct: 10,
+        Nov: 11,
+        Dec: 12
+      };
+      month = months[month];
+      if (date.match("0.")) date = date[1];
+      return month + "月" + date + "日";
+    });
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.adapter.add("getTooltipText", () => {
+      return "";
+    });
     //create a vertical scrollbar
     // chart.scrollbarY = new am4core.Scrollbar();
     // chart.scrollbarY.parent = chart.leftAxesContainer;
@@ -127,7 +152,8 @@ export default {
     chart.cursor.lineX.strokeWidth = 0;
     chart.cursor.lineX.fill = am4core.color("#666666");
     chart.cursor.lineX.fillOpacity = 0.1;
-
+    chart.scrollbarX = new am4core.Scrollbar();
+    chart.scrollbarX.parent = chart.bottomAxesContainer;
     this.chart = chart;
   },
   beforeDestroy() {

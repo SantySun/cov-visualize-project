@@ -45,6 +45,28 @@ export default {
     chart.dateFormatter.inputDateFormat = "MM.dd";
     let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
     dateAxis.renderer.minGridDistance = 50;
+    dateAxis.adapter.add("getTooltipText", text => {
+      let month = text.split(" ")[0];
+      let date = text.split(" ")[1];
+      // if (month.match("0.")) month = month[1];
+      const months = {
+        Jan: 1,
+        Feb: 2,
+        Mar: 3,
+        Apr: 4,
+        May: 5,
+        Jun: 6,
+        Jul: 7,
+        Aug: 8,
+        Sep: 9,
+        Oct: 10,
+        Nov: 11,
+        Dec: 12
+      };
+      month = months[month];
+      if (date.match("0.")) date = date[1];
+      return month + "月" + date + "日";
+    });
     dateAxis.start = 0;
     dateAxis.keepSelection = true;
     // let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -57,7 +79,10 @@ export default {
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.min = 0;
-    valueAxis.title.text = "死亡率";
+    valueAxis.title.text = "死亡率 单位：%";
+    valueAxis.adapter.add("getTooltipText", () => {
+      return "";
+    });
 
     // Create series
     function createSeries(field, name, stacked) {
