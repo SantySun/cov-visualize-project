@@ -57,7 +57,7 @@ export default {
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.min = 0;
-    valueAxis.title.text = "死亡率 （单位：%）";
+    valueAxis.title.text = "死亡率";
 
     // Create series
     function createSeries(field, name, stacked) {
@@ -65,7 +65,8 @@ export default {
       series.dataFields.valueY = field;
       series.dataFields.dateX = "date";
       series.name = name;
-      series.columns.template.tooltipText = "{name}: [bold]{valueY}[/]";
+      series.tooltipText = "{name}: [bold]{valueY}[/]%";
+      series.tooltip.pointerOrientation = "horizontal";
       series.stacked = stacked;
       series.columns.template.width = am4core.percent(95);
     }
@@ -82,7 +83,15 @@ export default {
     // Add legend
     chart.legend = new am4charts.Legend();
     chart.cursor = new am4charts.XYCursor();
-
+    chart.cursor.lineY.disabled = true;
+    // chart.cursor.lineX.disabled = true;
+    chart.cursor.fullWidthLineX = true;
+    chart.cursor.xAxis = dateAxis;
+    chart.cursor.lineX.strokeOpacity = 0;
+    chart.cursor.lineX.fill = am4core.color("#000");
+    chart.cursor.lineX.fillOpacity = 0.1;
+    chart.scrollbarX = new am4core.Scrollbar();
+    chart.scrollbarX.parent = chart.bottomAxesContainer;
     this.chart = chart;
   },
   beforeDestroy() {

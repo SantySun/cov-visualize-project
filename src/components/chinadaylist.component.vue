@@ -1,5 +1,7 @@
 <template>
-  <div class="hello" ref="chartdiv"></div>
+  <div>
+    <div class="hello" ref="chartdiv"></div>
+  </div>
 </template>
 
 <script>
@@ -9,11 +11,11 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import axios from "axios";
 import url from "./apiurl";
 am4core.useTheme(am4themes_animated);
-
 export default {
   name: "chinaDayList",
   //to do:
   //change to a line chart
+
   async mounted() {
     let chart = am4core.create(this.$refs.chartdiv, am4charts.XYChart);
     chart.paddingRight = 20;
@@ -119,6 +121,12 @@ export default {
     title.marginBottom = 30;
 
     chart.cursor = new am4charts.XYCursor();
+    chart.cursor.xAxis = dateAxis;
+    chart.cursor.lineY.disabled = true;
+    chart.cursor.fullWidthLineX = true;
+    chart.cursor.lineX.strokeWidth = 0;
+    chart.cursor.lineX.fill = am4core.color("#666666");
+    chart.cursor.lineX.fillOpacity = 0.1;
 
     this.chart = chart;
   },

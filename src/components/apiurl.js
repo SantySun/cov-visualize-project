@@ -1,1 +1,1 @@
-module.exports = "http://localhost:4000/cov2020/api/";
+module.exports = "http://52.62.171.204:4000/cov2020/api/";
