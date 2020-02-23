@@ -1,6 +1,7 @@
 <template>
   <div class="container shadow mt-5 p-3">
     <div class="hello" ref="chartdiv"></div>
+    <div class="hint">提示：点击图例可隐藏数据曲线，在图表中选中区域可放大图表</div>
   </div>
 </template>
 
@@ -34,6 +35,7 @@ export default {
       })
       .get("");
     chart.data = result.data.chinaDayAddList;
+    const lastDay = result.data.lastUpdateTime.split(" ")[0];
 
     chart.dateFormatter.inputDateFormat = "MM.dd";
 
@@ -131,7 +133,7 @@ export default {
     marker.stroke = am4core.color("#ccc");
 
     let title = chart.titles.create();
-    title.text = "每日新增";
+    title.text = "截至" + lastDay + "每日新增";
     title.fontSize = 25;
     title.marginBottom = 30;
 
@@ -165,5 +167,9 @@ export default {
 .container {
   width: 100%;
   margin: auto;
+}
+.hint {
+  margin: center;
+  width: 100%;
 }
 </style>

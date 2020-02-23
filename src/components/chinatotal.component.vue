@@ -1,6 +1,7 @@
 <template>
   <div class="container shadow mt-5 p-3">
     <div class="hello" ref="chartdiv"></div>
+    <div class="hint">提示：点击图例可隐藏区域</div>
   </div>
 </template>
 

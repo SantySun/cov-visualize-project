@@ -1,6 +1,7 @@
 <template>
   <div class="container shadow mt-5 p-3">
     <div class="hello" ref="chartdiv"></div>
+    <div class="hint">提示：点击图例可隐藏数据曲线，在图表中选中区域可放大图表</div>
   </div>
 </template>
 
@@ -31,6 +32,7 @@ export default {
       })
       .get("");
     chart.data = result.data.chinaDayList;
+    const lastUpdateTime = result.data.lastUpdateTime.split(" ")[0];
 
     chart.dateFormatter.inputDateFormat = "MM.dd";
 
@@ -141,7 +143,7 @@ export default {
     marker.stroke = am4core.color("#ccc");
 
     let title = chart.titles.create();
-    title.text = "疫情扩散趋势";
+    title.text = "截至" + lastUpdateTime + "疫情扩散趋势";
     title.fontSize = 25;
     title.marginBottom = 30;
 

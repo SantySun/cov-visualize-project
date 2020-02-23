@@ -1,6 +1,7 @@
 <template>
   <div class="container shadow mt-5 p-3">
     <div class="hello" ref="chartdiv"></div>
+    <div class="hint">提示：在图表中选中区域可放大图表</div>
   </div>
 </template>
 
