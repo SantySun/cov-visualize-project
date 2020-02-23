@@ -1,42 +1,31 @@
-// App.vue
-
 <template>
-  <div class="w3-top">
-    <div
-      class="navbar justify-content-center w3-row w3-padding w3-black"
-      style="list-style-type:none;"
-    >
-      <li class="w3-col s1">
-        <router-link to="/" class="w3-button w3-block w3-black">最新数据</router-link>
-      </li>
-
-      <li class="w3-col s1">
-        <router-link to="/day-list" class="w3-button w3-block w3-black">历史数据</router-link>
-      </li>
-
-      <li class="w3-col s1">
-        <router-link to="/add-list" class="w3-button w3-block w3-black">每日新增</router-link>
-      </li>
-
-      <li class="w3-col s1">
-        <router-link to="/province-map" class="w3-button w3-block w3-black">疫情地图</router-link>
-      </li>
-
-      <li class="w3-col s1">
-        <router-link to="/daily-new-add" class="w3-button w3-block w3-black">新增对比</router-link>
-      </li>
-
-      <li class="w3-col s1">
-        <router-link to="/daily-dead-rate" class="w3-button w3-block w3-black">死亡对比</router-link>
-      </li>
-
-      <li class="w3-col s1">
-        <router-link to="/daily-heal-rate" class="w3-button w3-block w3-black">治愈对比</router-link>
-      </li>
-    </div>
-
+  <div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <router-link to="/" class="nav-link">最新数据</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/day-list" class="nav-link">历史数据</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/add-list" class="nav-link">每日新增</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/province-map" class="nav-link">疫情地图</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/daily-new-add" class="nav-link">新增对比</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/daily-dead-rate" class="nav-link">死亡对比</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/daily-heal-rate" class="nav-link">治愈对比</router-link>
+        </li>
+      </ul>
+    </nav>
     <br />
-
     <transition name="fade">
       <router-view></router-view>
     </transition>
