@@ -1,5 +1,7 @@
 <template>
-  <div class="hello" ref="chartdiv"></div>
+  <div class="navbar justify-content-center w3-container w3-card w3-white w3-margin-bottom">
+    <div class="hello" ref="chartdiv"></div>
+  </div>
 </template>
 
 <script>
@@ -71,7 +73,7 @@ export default {
 
     let title = chart.titles.create();
     title.text = "截至" + time + "全国累计数据";
-    title.fontSize = 25;
+    title.fontSize = 15;
     title.marginBottom = 30;
 
     chart.legend = new am4charts.Legend();
@@ -90,5 +92,9 @@ export default {
 .hello {
   width: 95%;
   height: 500px;
+}
+.w3-container {
+  width: 80%;
+  margin: auto;
 }
 </style>

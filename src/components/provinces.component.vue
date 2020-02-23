@@ -1,5 +1,7 @@
 <template>
-  <div class="hello" ref="chartdiv"></div>
+  <div class="navbar justify-content-center w3-container w3-card w3-white w3-margin-bottom">
+    <div class="hello" ref="chartdiv"></div>
+  </div>
 </template>
 
 <script>
@@ -106,5 +108,9 @@ export default {
 .hello {
   width: 100%;
   height: 500px;
+}
+.w3-container {
+  width: 80%;
+  margin: auto;
 }
 </style>
